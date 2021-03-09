@@ -1,0 +1,8 @@
+set datafile separator ","
+set terminal pngcairo font "arial,10" size 1080,720
+set output 'la_emp_by_sec.png'
+set boxwidth .75
+set style fill solid
+set title "Louisiana Employment by Sector (BLS Occupational Title)"
+set xtic rotate by -45 scale 0
+plot "la_emp_by_sec.csv" using ($1 == "00-0000" ? 1/0 : $3):xtic(2) with boxes
