@@ -8,4 +8,6 @@ louisiana_employment_by_sector = louisiana[['occ_code', 'occ_title', 'tot_emp']]
 
 louisiana_employment_by_sector.sort_values(by='tot_emp', ascending=False).to_csv('la_emp_by_sec.csv', index=False)
 
+louisiana_oil_employment_breakdown = louisiana[louisiana['occ_title'].str.contains(', Oil ')][['occ_code', 'occ_title', 'tot_emp']]
 
+print(louisiana_oil_employment_breakdown)
